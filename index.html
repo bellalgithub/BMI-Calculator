@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="total-form">
+    <div id="form">
+<!--        Weight field-->
+        <h1> Person Weight (kg) : </h1>
+        <input id="weightInput" type="text" placeholder="Enter Your Weight (Kg)">
+
+<!--        height Field-->
+        <h1>Person Height (m) :</h1>
+        <input id="heightInput" type="text" placeholder="Enter your Height (m)">
+        <br><br>
+<!--        Calculate Button-->
+        <div id="button">
+            <button onclick="calculate()" id="calculateBtn">Calculate</button>
+        </div>
+
+<!--        Result -->
+        <h1><div id="result"></div></h1>
+    </div>
+</div>
+
+
+<script>
+
+    // BMI Calulating Function
+function calculate(){
+    let weightInput =  document.querySelector('#weightInput');
+    let heightInput =  document.querySelector('#heightInput');
+    let calculateBtn =  document.querySelector('#calculateBtn');
+    let weight = Number(weightInput.value);
+    let height = Number(heightInput.value);
+    let result = document.querySelector('#result');
+    let bmi  = weight/(height*height);
+    result.innerHTML = ('Body Mass Index (BMI) of Person  :' + ' ' + bmi.toFixed(2));
+}
+
+
+</script>
+</body>
+</html>
